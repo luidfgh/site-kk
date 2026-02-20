@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recuperar senha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <main class="container">
+    <section class="login-card" aria-labelledby="recover-title">
+      <div class="card-side card-side--left" aria-hidden="true">
+        <div class="art">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+        </div>
+      </div>
+      <div class="card-side card-side--right">
+        <div class="brand">
+          <div class="logo"><i class="fas fa-lock"></i></div>
+          <h1 id="recover-title">Recuperar senha</h1>
+          <p class="subtitle">Informe seu e-mail para recuperar o acesso.</p>
+        </div>
+
+        <form class="login-form" id="recoverform" action="#" method="POST">
+          <label class="input-group">
+            <span class="label">Email</span>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="recover-email" name="email" placeholder="seu@exemplo.com" required>
+            </div>
+          </label>
+
+          <button type="submit" class="login-button"><i class="fas fa-paper-plane"></i> Enviar instruções</button>
+
+          <p class="register-link">Lembrou a senha? <a href="index.html">Voltar ao login</a></p>
+        </form>
+
+        <footer class="card-footer">&copy; TESTE kkj</footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

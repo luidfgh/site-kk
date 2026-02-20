@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <main class="container">
+    <section class="login-card" aria-labelledby="register-title">
+      <div class="card-side card-side--left" aria-hidden="true">
+        <div class="art">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+        </div>
+      </div>
+
+      <div class="card-side card-side--right">
+        <div class="brand">
+          <div class="logo"><i class="fas fa-user-plus"></i></div>
+          <h1 id="register-title">Criar conta</h1>
+          <p class="subtitle">Preencha os dados para se registrar</p>
+        </div>
+
+        <form class="login-form" id="registerform" action="register.php" method="POST">
+          <label class="input-group">
+            <span class="label">Nome completo</span>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" name="name" placeholder="Seu nome" required>
+            </div>
+          </label>
+
+          <label class="input-group">
+            <span class="label">Email</span>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" name="email" placeholder="seu@exemplo.com" required>
+            </div>
+          </label>
+
+          <label class="input-group">
+            <span class="label">Senha</span>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" name="password" placeholder="••••••••" required>
+              <button type="button" class="icon-btn" id="togglePassword" aria-label="Mostrar senha">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </label>
+
+          <label class="input-group">
+            <span class="label">Confirmar senha</span>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="confirm-password" name="confirm_password" placeholder="••••••••" required>
+              <button type="button" class="icon-btn" id="toggleConfirm" aria-label="Mostrar senha">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </label>
+
+          <label class="remember-me">
+            <input type="checkbox" name="terms" required>
+             Concordo com os <a href="#" style="color: #a5b4fc; text-decoration: none;">termos de serviço</a>
+          </label>
+
+          <button type="submit" class="login-button"><i class="fas fa-user-check"></i> Registrar</button>
+
+          <p class="register-link">Já tem uma conta? <a href="index.html">Faça login</a></p>
+        </form>
+
+        <footer class="card-footer">&copy; TESTE kkj</footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function setupToggle(toggleId, inputId) {
+      const toggle = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+      if (toggle && input) {
+        toggle.addEventListener('click', () => {
+          const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+          input.setAttribute('type', type);
+          toggle.querySelector('i').classList.toggle('fa-eye');
+          toggle.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+      }
+    }
+    setupToggle('togglePassword', 'password');
+    setupToggle('toggleConfirm', 'confirm-password');
+  </script>
+</body>
+</html>

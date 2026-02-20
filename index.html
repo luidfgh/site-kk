@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login elegante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <nav class="top-menu" aria-label="Menu principal">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="login-card" aria-labelledby="login-title">
+            <div class="card-side card-side--left" aria-hidden="true">
+                <div class="art">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                </div>
+            </div>
+
+            <div class="card-side card-side--right">
+                  <div class="brand">
+                  <div class="logo"><i class="fas fa-dog" aria-hidden="true"></i></div>
+                    <h1 id="login-title">Bem-vindo de volta</h1>
+                    <p class="subtitle">Faça login para acessar sua conta</p>
+                </div>
+
+                <form class="login-form" id="loginform" action="login.php" method="POST">
+                    <label class="input-group">
+                        <span class="label">Email</span>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="seu@exemplo.com" required>
+                        </div>
+                    </label>
+
+                    <label class="input-group">
+                        <span class="label">Senha</span>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
+                            <button type="button" class="icon-btn" id="togglePassword" aria-label="Mostrar senha">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </label>
+
+                    <div class="options">
+                        <label class="remember-me"><input type="checkbox" name="remember"> Lembrar-me</label>
+                        <a href="recover.html" class="forgot-password">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="login-button"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+
+                    <div class="divider" aria-hidden="true"><span>ou</span></div>
+
+                    <div class="socials">
+                        <button type="button" class="social-btn google" onclick="window.location.href='/auth/google'"><i class="fab fa-google"></i> Entrar com Google</button>
+                        <button type="button" class="social-btn github" onclick="window.location.href='/auth/github'"><i class="fab fa-github"></i> Entrar com GitHub</button>
+                    </div>
+
+                    <p class="register-link">Não tem uma conta? <a href="register.html">Registre-se</a></p>
+                </form>
+
+                <footer class="card-footer">&copy; TESTE kkj</footer>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const toggle = document.getElementById('togglePassword');
+        const pwd = document.getElementById('password');
+        if (toggle && pwd) {
+            toggle.addEventListener('click', () => {
+                const type = pwd.getAttribute('type') === 'password' ? 'text' : 'password';
+                pwd.setAttribute('type', type);
+                toggle.querySelector('i').classList.toggle('fa-eye');
+                toggle.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
+    </script>
+</body>
+</html>
